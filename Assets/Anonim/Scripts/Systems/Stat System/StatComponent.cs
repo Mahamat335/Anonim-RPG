@@ -16,6 +16,8 @@ namespace Anonim.Systems.StatSystem
             {
                 _statDict[stat.Type] = stat;
             }
+
+            LinkDerivedStats();
         }
 
         public float GetStat(StatType type)
@@ -43,6 +45,22 @@ namespace Anonim.Systems.StatSystem
         {
             _statDict[StatType.Strength].BaseValue += 1;
             _statDict[StatType.Agility].BaseValue += 1;
+            _statDict[StatType.Intelligence].BaseValue += 1;
+            _statDict[StatType.Perception].BaseValue += 1;
         }
+
+        private void LinkDerivedStats()
+        {
+            //TODO : Seperatly written functions for each derived stat
+            // Strength → MaxHealth
+            AddModifier(StatType.MaxHealth, new StatModifier(() => _statDict[StatType.Strength].Value * 10f, this));
+
+            // Agility → MovementSpeed
+            AddModifier(StatType.MovementSpeed, new StatModifier(() => _statDict[StatType.Agility].Value * 0.1f, this));
+
+            // Agility → AttackSpeed
+            AddModifier(StatType.AttackSpeed, new StatModifier(() => _statDict[StatType.Agility].Value * 0.05f, this));
+        }
+
     }
 }

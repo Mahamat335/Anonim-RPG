@@ -34,13 +34,23 @@ namespace Anonim.Systems.StatSystem
 
     public class StatModifier
     {
-        public float Value;
+        public float Value => _valueProvider != null ? _valueProvider() : _value;
         public object Source;
+
+        private float _value;
+        private System.Func<float> _valueProvider;
 
         public StatModifier(float value, object source)
         {
-            Value = value;
+            _value = value;
+            Source = source;
+        }
+
+        public StatModifier(System.Func<float> valueProvider, object source)
+        {
+            _valueProvider = valueProvider;
             Source = source;
         }
     }
+
 }
