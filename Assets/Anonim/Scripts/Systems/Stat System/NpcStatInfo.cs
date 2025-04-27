@@ -8,7 +8,7 @@ namespace Anonim.Systems.StatSystem
         [SerializeField] private StatComponent _statComponent;
         [SerializeField] private TMP_Text _infoText;
 
-        private void OnEnable()
+        private void Start()
         {
             _infoText.SetText(GetStatInfo());
         }

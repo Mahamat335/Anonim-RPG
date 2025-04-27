@@ -25,11 +25,11 @@ namespace Anonim.Systems.StatSystem
             return _statDict.TryGetValue(type, out var stat) ? stat.Value : 0f;
         }
 
-        public void AddModifier(StatType type, StatModifier modifier)
+        public void AddModifier(StatType type, StatModifier modifier, bool isNotifying = true)
         {
             if (_statDict.TryGetValue(type, out var stat))
             {
-                stat.AddModifier(modifier);
+                stat.AddModifier(modifier, isNotifying);
             }
         }
 
@@ -51,15 +51,15 @@ namespace Anonim.Systems.StatSystem
 
         private void LinkDerivedStats()
         {
-            //TODO : Seperatly written functions for each derived stat
+            //TODO : Seperatly written functions for each derived stat instead of lambdas
             // Strength → MaxHealth
-            AddModifier(StatType.MaxHealth, new StatModifier(() => _statDict[StatType.Strength].Value * 10f, this));
+            AddModifier(StatType.MaxHealth, new StatModifier(() => _statDict[StatType.Strength].Value * 10f, this), false);
 
             // Agility → MovementSpeed
-            AddModifier(StatType.MovementSpeed, new StatModifier(() => _statDict[StatType.Agility].Value * 0.1f, this));
+            AddModifier(StatType.MovementSpeed, new StatModifier(() => _statDict[StatType.Agility].Value * 0.1f, this), false);
 
             // Agility → AttackSpeed
-            AddModifier(StatType.AttackSpeed, new StatModifier(() => _statDict[StatType.Agility].Value * 0.05f, this));
+            AddModifier(StatType.AttackSpeed, new StatModifier(() => _statDict[StatType.Agility].Value * 0.05f, this), false);
         }
 
     }

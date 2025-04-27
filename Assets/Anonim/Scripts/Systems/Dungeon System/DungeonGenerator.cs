@@ -17,6 +17,7 @@ namespace Anonim.Systems.DungeonSystem
 
         private int[,] _grid;
         private Texture2D _texture;
+        [SerializeField] private Vector2 _gridSize = new Vector2(2.56f, 2.56f);
 
         private void OnEnable()
         {
@@ -141,6 +142,16 @@ namespace Anonim.Systems.DungeonSystem
                 }
             }
             return false;
+        }
+
+        public Vector2 GetGridToWorldPosition(Vector2Int gridPosition)
+        {
+            return new Vector2((gridPosition.x + 0.5f) * _gridSize.x, (gridPosition.y + 0.5f) * _gridSize.y);
+        }
+
+        public Vector2Int GetWorldToGridPosition(Vector2 worldPosition)
+        {
+            return new Vector2Int(Mathf.FloorToInt(worldPosition.x / _gridSize.x), Mathf.FloorToInt(worldPosition.y / _gridSize.y));
         }
     }
 
