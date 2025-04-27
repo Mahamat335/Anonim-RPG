@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerMovementInput: {fileID: 11400000, guid: b309da36f1fae1e48925880f75a39f69, type: 2}
+  PlayerMousePositionInput: {fileID: 11400000, guid: 4f3d01e4f8f15214bb603d38dcf9945a, type: 2}
+  PlayerMouseLeftClickInput: {fileID: 11400000, guid: e462acf555bc8de4b87582c23a4b8463, type: 2}
