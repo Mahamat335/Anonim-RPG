@@ -1,33 +1,38 @@
-using System.Collections.Generic;
 using Anonim.Systems.DungeonSystem;
 using Anonim.Systems.EventSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Anonim.Systems.CombatSystem.Weapons;
 
 namespace Anonim.Systems.CombatSystem.TileSelection
 {
     public class PlayerTileSelector : MonoBehaviour
     {
         [SerializeField] private TileSelector _tileSelector;
-        private Vector3Int _currentTilePosition;
+        public WeaponData _weaponData;
+        private Vector2Int _lastPlayerGridPosition;
+        private Vector2Int _lastGridPosition;
 
         private void OnEnable()
         {
             EventManager.Instance.PlayerMouseLeftClickInput.AddListener(OnMouseLeftClick);
             EventManager.Instance.PlayerMousePositionInput.AddListener(OnMouseMove);
+            EventManager.Instance.PlayerMovementCompleted.AddListener(OnPlayerMovementCompleted);
         }
 
         private void OnDisable()
         {
             EventManager.Instance.PlayerMouseLeftClickInput.RemoveListener(OnMouseLeftClick);
             EventManager.Instance.PlayerMousePositionInput.RemoveListener(OnMouseMove);
+            EventManager.Instance.PlayerMovementCompleted.RemoveListener(OnPlayerMovementCompleted);
         }
 
+        #region Input Actions
         private void OnMouseLeftClick(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                // Attack logic here
+                Attack();
             }
         }
 
@@ -40,21 +45,51 @@ namespace Anonim.Systems.CombatSystem.TileSelection
 
                 Vector2Int gridPosition = DungeonGenerator.Instance.GetWorldToGridPosition(new Vector2(worldPosition.x, worldPosition.y));
 
-                UpdateSingleTileSelection(new Vector3Int(gridPosition.x, gridPosition.y, 0));
+                if (gridPosition == _lastGridPosition)
+                {
+                    return;
+                }
+
+                _lastGridPosition = gridPosition;
+
+                Vector3Int selectionCenter = UpdateSelectionCenter();
+
+                _tileSelector.UpdateSelectedTiles(selectionCenter, _weaponData.TileSelectionMethod, _weaponData.AttackRadius);
             }
         }
 
-        public void UpdateSingleTileSelection(Vector3Int newTilePosition)
+        private void OnPlayerMovementCompleted(Vector2Int newPlayerGridPosition)
         {
-            _tileSelector.RemoveSelectedTile(_currentTilePosition);
-            _tileSelector.AddSelectedTile(newTilePosition);
-            _currentTilePosition = newTilePosition;
+            if (newPlayerGridPosition != _lastPlayerGridPosition)
+            {
+                _lastPlayerGridPosition = newPlayerGridPosition;
+                Vector3Int selectionCenter = UpdateSelectionCenter();
+                _tileSelector.UpdateSelectedTiles(selectionCenter, _weaponData.TileSelectionMethod, _weaponData.AttackRadius);
+            }
+        }
+        #endregion
+
+        protected virtual void Attack()
+        {
+            // Attack logic here
         }
 
-        public void ClearSelection()
+        public Vector3Int UpdateSelectionCenter()
         {
-            _tileSelector.SetSelectedTiles(new List<Vector3Int>());
-            _currentTilePosition = Vector3Int.zero;
+            Vector2Int delta = _lastGridPosition - _lastPlayerGridPosition;
+
+            if (delta.magnitude <= _weaponData.AttackRange)
+            {
+                return new Vector3Int(_lastGridPosition.x, _lastGridPosition.y);
+            }
+
+            Vector2 direction = delta;
+            direction.Normalize();
+            direction *= _weaponData.AttackRange;
+
+            Vector3Int newCenter = new Vector3Int(Mathf.RoundToInt(_lastPlayerGridPosition.x + direction.x), Mathf.RoundToInt(_lastPlayerGridPosition.y + direction.y));
+
+            return newCenter;
         }
     }
 }

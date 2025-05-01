@@ -1,6 +1,7 @@
 using Sigtrap.Relays;
 using Anonim.Systems.DialogueSystem;
 using Anonim.Systems.StatSystem;
+using UnityEngine;
 
 namespace Anonim.Systems.EventSystem
 {
@@ -19,6 +20,10 @@ namespace Anonim.Systems.EventSystem
 
         #region Stat System Events
         public Relay<Stat> StatModifierAdded { get; private set; } = new();
+        #endregion
+
+        #region Other Player Events
+        public Relay<Vector2Int> PlayerMovementCompleted { get; private set; } = new();
         #endregion
     }
 }
