@@ -194,6 +194,9 @@ MonoBehaviour:
   _tileSelector:
     tilemap: {fileID: 0}
     selectionTint: {r: 1, g: 0, b: 0, a: 0.5019608}
+    selectionMethod: {fileID: 11400000, guid: bd7a362622f45de4eba0657f4ac3fc94, type: 2}
+  attackRadius: 1
+  attackRange: 3
 --- !u!4 &5779994464660578282 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4343012022219378640, guid: e8cf2918b3ef3e245a6cff2dc86610a2, type: 3}

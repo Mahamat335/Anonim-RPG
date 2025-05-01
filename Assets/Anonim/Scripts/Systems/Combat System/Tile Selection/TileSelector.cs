@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Anonim.CombatSystem.TileSelection.TileSelectionMethods;
 
 namespace Anonim.Systems.CombatSystem.TileSelection
 {
@@ -10,32 +11,13 @@ namespace Anonim.Systems.CombatSystem.TileSelection
         [SerializeField] private Tilemap tilemap;
         private List<Vector3Int> selectedTiles = new List<Vector3Int>();
         [SerializeField] private Color selectionTint;
+        [SerializeField] private TileSelectionMethod selectionMethod;
 
-        public void SetSelectedTiles(List<Vector3Int> tiles)
+        public void UpdateSelectedTiles(Vector3Int centerPosition, uint selectionRadius = 1)
         {
             ClearSelection();
-            selectedTiles = tiles;
+            selectedTiles = selectionMethod.GetSelectedTiles(centerPosition, selectionRadius);
             ApplySelection();
-        }
-
-        public void AddSelectedTile(Vector3Int tilePos)
-        {
-            if (!selectedTiles.Contains(tilePos))
-            {
-                ClearSelection();
-                selectedTiles.Add(tilePos);
-                ApplySelection();
-            }
-        }
-
-        public void RemoveSelectedTile(Vector3Int tilePos)
-        {
-            if (selectedTiles.Contains(tilePos))
-            {
-                ClearSelection();
-                selectedTiles.Remove(tilePos);
-                ApplySelection();
-            }
         }
 
         private void ApplySelection()
@@ -45,7 +27,7 @@ namespace Anonim.Systems.CombatSystem.TileSelection
                 if (!tilemap.HasTile(tilePos))
                     continue;
 
-                // Tile'ın rengi normalde Color.white olduğu için, selectionTint'ı alpha oranında uygula
+                // Blend the color with the selection tint
                 Color blendedColor = Color.Lerp(Color.white, selectionTint, selectionTint.a);
                 blendedColor.a = 1.0f;
                 tilemap.SetColor(tilePos, blendedColor);
