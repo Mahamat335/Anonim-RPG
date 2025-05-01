@@ -153,6 +153,7 @@ namespace Anonim.Systems.MovementSystem
             }
 
             transform.position = targetWorldPos;
+            EventManager.Instance.PlayerMovementCompleted.Dispatch(targetGridPos); // Notify other systems about the new position
         }
 
         private void PlayMovementAnimation(Vector2 direction)

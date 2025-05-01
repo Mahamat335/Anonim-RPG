@@ -9,19 +9,22 @@ namespace Anonim.Systems.CombatSystem.TileSelection
     public class PlayerTileSelector : MonoBehaviour
     {
         [SerializeField] private TileSelector _tileSelector;
-        public WeaponData _weaponData; // TODO: Use attackData.AttackType instead of AttackType
-        private Vector2Int _playerTilePosition; // TODO: Remove this and use the player position from another script
+        public WeaponData _weaponData;
+        private Vector2Int _lastPlayerGridPosition;
+        private Vector2Int _lastGridPosition;
 
         private void OnEnable()
         {
             EventManager.Instance.PlayerMouseLeftClickInput.AddListener(OnMouseLeftClick);
             EventManager.Instance.PlayerMousePositionInput.AddListener(OnMouseMove);
+            EventManager.Instance.PlayerMovementCompleted.AddListener(OnPlayerMovementCompleted);
         }
 
         private void OnDisable()
         {
             EventManager.Instance.PlayerMouseLeftClickInput.RemoveListener(OnMouseLeftClick);
             EventManager.Instance.PlayerMousePositionInput.RemoveListener(OnMouseMove);
+            EventManager.Instance.PlayerMovementCompleted.RemoveListener(OnPlayerMovementCompleted);
         }
 
         #region Input Actions
@@ -40,12 +43,27 @@ namespace Anonim.Systems.CombatSystem.TileSelection
                 Vector2 mousePosition = context.ReadValue<Vector2>();
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-                // TODO: cache last grid position and player position and only update if they change. EG: CheckForChanges()
-
                 Vector2Int gridPosition = DungeonGenerator.Instance.GetWorldToGridPosition(new Vector2(worldPosition.x, worldPosition.y));
-                _playerTilePosition = DungeonGenerator.Instance.GetWorldToGridPosition(new Vector2(transform.position.x, transform.position.y));
-                Vector3Int selectionCenter = UpdateSelectionCenter(gridPosition, _weaponData.AttackRange);
 
+                if (gridPosition == _lastGridPosition)
+                {
+                    return;
+                }
+
+                _lastGridPosition = gridPosition;
+
+                Vector3Int selectionCenter = UpdateSelectionCenter();
+
+                _tileSelector.UpdateSelectedTiles(selectionCenter, _weaponData.TileSelectionMethod, _weaponData.AttackRadius);
+            }
+        }
+
+        private void OnPlayerMovementCompleted(Vector2Int newPlayerGridPosition)
+        {
+            if (newPlayerGridPosition != _lastPlayerGridPosition)
+            {
+                _lastPlayerGridPosition = newPlayerGridPosition;
+                Vector3Int selectionCenter = UpdateSelectionCenter();
                 _tileSelector.UpdateSelectedTiles(selectionCenter, _weaponData.TileSelectionMethod, _weaponData.AttackRadius);
             }
         }
@@ -56,21 +74,20 @@ namespace Anonim.Systems.CombatSystem.TileSelection
             // Attack logic here
         }
 
-        public Vector3Int UpdateSelectionCenter(Vector2Int centerPosition, uint selectionRange)
+        public Vector3Int UpdateSelectionCenter()
         {
-            Vector2Int delta = centerPosition - _playerTilePosition;
+            Vector2Int delta = _lastGridPosition - _lastPlayerGridPosition;
 
-            if (delta.magnitude <= selectionRange)
+            if (delta.magnitude <= _weaponData.AttackRange)
             {
-                return new Vector3Int(centerPosition.x, centerPosition.y);
+                return new Vector3Int(_lastGridPosition.x, _lastGridPosition.y);
             }
 
             Vector2 direction = delta;
             direction.Normalize();
-            direction *= selectionRange;
+            direction *= _weaponData.AttackRange;
 
-            Vector3 targetPosition = new Vector3(_playerTilePosition.x + direction.x, _playerTilePosition.y + direction.y);
-            Vector3Int newCenter = new Vector3Int(Mathf.RoundToInt(targetPosition.x), Mathf.RoundToInt(targetPosition.y));
+            Vector3Int newCenter = new Vector3Int(Mathf.RoundToInt(_lastPlayerGridPosition.x + direction.x), Mathf.RoundToInt(_lastPlayerGridPosition.y + direction.y));
 
             return newCenter;
         }
