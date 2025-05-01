@@ -11,12 +11,11 @@ namespace Anonim.Systems.CombatSystem.TileSelection
         [SerializeField] private Tilemap tilemap;
         private List<Vector3Int> selectedTiles = new List<Vector3Int>();
         [SerializeField] private Color selectionTint;
-        [SerializeField] private TileSelectionMethod selectionMethod;
 
-        public void UpdateSelectedTiles(Vector3Int centerPosition, uint selectionRadius = 1)
+        public void UpdateSelectedTiles(Vector3Int centerPosition, TileSelectionMethod tileSelectionMethod, uint selectionRadius = 1)
         {
             ClearSelection();
-            selectedTiles = selectionMethod.GetSelectedTiles(centerPosition, selectionRadius);
+            selectedTiles = tileSelectionMethod.GetSelectedTiles(centerPosition, selectionRadius);
             ApplySelection();
         }
 
@@ -25,7 +24,9 @@ namespace Anonim.Systems.CombatSystem.TileSelection
             foreach (var tilePos in selectedTiles)
             {
                 if (!tilemap.HasTile(tilePos))
+                {
                     continue;
+                }
 
                 // Blend the color with the selection tint
                 Color blendedColor = Color.Lerp(Color.white, selectionTint, selectionTint.a);

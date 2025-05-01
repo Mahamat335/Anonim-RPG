@@ -3,16 +3,14 @@ using Anonim.Systems.DungeonSystem;
 using Anonim.Systems.EventSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Anonim.Systems.CombatSystem.TileSelection;
+using Anonim.Systems.CombatSystem.Attacks;
 
-namespace Anonim.Systems.CombatSystem
+namespace Anonim.Systems.CombatSystem.TileSelection
 {
     public class PlayerTileSelector : MonoBehaviour
     {
         [SerializeField] private TileSelector _tileSelector;
-        //[SerializeField] private Attack _attack; TODO: I need do think about this
-        public uint attackRadius = 1; // TODO: Remove this and use the attack radius from the attack scriptable object
-        public uint attackRange = 3; // TODO: Remove this and use the attack range from the attack scriptable object
+        public AttackType _attackType; // TODO: Use attackData.AttackType instead of AttackType
         private Vector2Int _playerTilePosition; // TODO: Remove this and use the player position from another script
 
         private void OnEnable()
@@ -43,11 +41,13 @@ namespace Anonim.Systems.CombatSystem
                 Vector2 mousePosition = context.ReadValue<Vector2>();
                 Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
+                // TODO: cache last grid position and player position and only update if they change. EG: CheckForChanges()
+
                 Vector2Int gridPosition = DungeonGenerator.Instance.GetWorldToGridPosition(new Vector2(worldPosition.x, worldPosition.y));
                 _playerTilePosition = DungeonGenerator.Instance.GetWorldToGridPosition(new Vector2(transform.position.x, transform.position.y));
-                Vector3Int selectionCenter = UpdateSelectionCenter(gridPosition, attackRange);
+                Vector3Int selectionCenter = UpdateSelectionCenter(gridPosition, _attackType.AttackRange);
 
-                _tileSelector.UpdateSelectedTiles(selectionCenter, attackRadius);
+                _tileSelector.UpdateSelectedTiles(selectionCenter, _attackType.TileSelectionMethod, _attackType.AttackRadius);
             }
         }
         #endregion
@@ -66,7 +66,6 @@ namespace Anonim.Systems.CombatSystem
                 return new Vector3Int(centerPosition.x, centerPosition.y);
             }
 
-            // Normalize yönü (x veya y düzleminde ilerle)
             Vector2 direction = delta;
             direction.Normalize();
             direction *= selectionRange;
