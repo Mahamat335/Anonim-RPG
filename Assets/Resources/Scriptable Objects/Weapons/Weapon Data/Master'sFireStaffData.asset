@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bb85ddf957d1e44fbf97dca6b0e6d12, type: 3}
-  m_Name: CrossMeleeAttack
+  m_Script: {fileID: 11500000, guid: 7dc7182e0551f224d8667697b1569708, type: 3}
+  m_Name: Master'sFireStaffData
   m_EditorClassIdentifier: 
-  AttackRange: 1
-  AttackRadius: 1
+  WeaponName: Master's Fire Staff
+  WeaponDescription: Creates a fire corridor
+  AttackRange: 5
+  AttackRadius: 3
   TileSelectionMethod: {fileID: 11400000, guid: f6ec6c6e9aded93438aef43deb3373e6, type: 2}

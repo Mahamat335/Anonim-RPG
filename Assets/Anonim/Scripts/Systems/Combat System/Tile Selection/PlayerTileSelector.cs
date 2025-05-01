@@ -1,16 +1,15 @@
-using System.Collections.Generic;
 using Anonim.Systems.DungeonSystem;
 using Anonim.Systems.EventSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using Anonim.Systems.CombatSystem.Attacks;
+using Anonim.Systems.CombatSystem.Weapons;
 
 namespace Anonim.Systems.CombatSystem.TileSelection
 {
     public class PlayerTileSelector : MonoBehaviour
     {
         [SerializeField] private TileSelector _tileSelector;
-        public AttackType _attackType; // TODO: Use attackData.AttackType instead of AttackType
+        public WeaponData _weaponData; // TODO: Use attackData.AttackType instead of AttackType
         private Vector2Int _playerTilePosition; // TODO: Remove this and use the player position from another script
 
         private void OnEnable()
@@ -45,9 +44,9 @@ namespace Anonim.Systems.CombatSystem.TileSelection
 
                 Vector2Int gridPosition = DungeonGenerator.Instance.GetWorldToGridPosition(new Vector2(worldPosition.x, worldPosition.y));
                 _playerTilePosition = DungeonGenerator.Instance.GetWorldToGridPosition(new Vector2(transform.position.x, transform.position.y));
-                Vector3Int selectionCenter = UpdateSelectionCenter(gridPosition, _attackType.AttackRange);
+                Vector3Int selectionCenter = UpdateSelectionCenter(gridPosition, _weaponData.AttackRange);
 
-                _tileSelector.UpdateSelectedTiles(selectionCenter, _attackType.TileSelectionMethod, _attackType.AttackRadius);
+                _tileSelector.UpdateSelectedTiles(selectionCenter, _weaponData.TileSelectionMethod, _weaponData.AttackRadius);
             }
         }
         #endregion

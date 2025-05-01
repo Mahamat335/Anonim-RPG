@@ -9,9 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bb85ddf957d1e44fbf97dca6b0e6d12, type: 3}
-  m_Name: SimpleRangedAttack
+  m_Script: {fileID: 11500000, guid: 7dc7182e0551f224d8667697b1569708, type: 3}
+  m_Name: SimpleSwordData
   m_EditorClassIdentifier: 
-  AttackRange: 4
+  WeaponName: Simple Sword
+  WeaponDescription: Simple melee weapon
+  AttackRange: 1
   AttackRadius: 1
   TileSelectionMethod: {fileID: 11400000, guid: bd7a362622f45de4eba0657f4ac3fc94, type: 2}
