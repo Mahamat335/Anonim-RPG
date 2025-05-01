@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Anonim.Systems.EventSystem;
 
 namespace Anonim.Systems.StatSystem
 {
@@ -11,9 +12,14 @@ namespace Anonim.Systems.StatSystem
 
         public float Value => CalculateValue();
 
-        public void AddModifier(StatModifier modifier)
+        public void AddModifier(StatModifier modifier, bool isNotifying)
         {
             _modifiers.Add(modifier);
+
+            if (isNotifying)
+            {
+                EventManager.Instance.StatModifierAdded.Dispatch(this);
+            }
         }
 
         public void RemoveModifier(StatModifier modifier)
