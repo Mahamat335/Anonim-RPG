@@ -47,6 +47,7 @@ namespace Anonim.Systems.MovementSystem
             }
 
             _movementTimer.OnCompleted += OnMovementTimerCompleted;
+            // TODO: Set this in another script, dungeon generation maybe
             transform.position = DungeonGenerator.Instance.GetGridToWorldPosition(new Vector2Int(0, 0)); // Set initial position to (0,0) grid position
         }
 

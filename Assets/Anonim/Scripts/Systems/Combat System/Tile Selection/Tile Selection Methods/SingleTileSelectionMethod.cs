@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Anonim.Systems.DungeonSystem;
 using UnityEngine;
 
 namespace Anonim.CombatSystem.TileSelection.TileSelectionMethods
@@ -8,7 +9,11 @@ namespace Anonim.CombatSystem.TileSelection.TileSelectionMethods
     {
         public override List<Vector3Int> GetSelectedTiles(Vector3Int centerTilePosition, uint selectionRadius)
         {
-            return new List<Vector3Int> { centerTilePosition };
+            if (DungeonGenerator.Instance.IsFloor(centerTilePosition.x, centerTilePosition.y))
+            {
+                return new List<Vector3Int> { centerTilePosition };
+            }
+            return null;
         }
     }
 }

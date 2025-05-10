@@ -9,19 +9,19 @@ namespace Anonim.Systems.CombatSystem.TileSelection
     public class TileSelector
     {
         [SerializeField] private Tilemap tilemap;
-        private List<Vector3Int> selectedTiles = new List<Vector3Int>();
+        public List<Vector3Int> SelectedTiles = new List<Vector3Int>();
         [SerializeField] private Color selectionTint;
 
         public void UpdateSelectedTiles(Vector3Int centerPosition, TileSelectionMethod tileSelectionMethod, uint selectionRadius = 1)
         {
             ClearSelection();
-            selectedTiles = tileSelectionMethod.GetSelectedTiles(centerPosition, selectionRadius);
+            SelectedTiles = tileSelectionMethod.GetSelectedTiles(centerPosition, selectionRadius);
             ApplySelection();
         }
 
         private void ApplySelection()
         {
-            foreach (var tilePos in selectedTiles)
+            foreach (var tilePos in SelectedTiles)
             {
                 if (!tilemap.HasTile(tilePos))
                 {
@@ -37,7 +37,7 @@ namespace Anonim.Systems.CombatSystem.TileSelection
 
         private void ClearSelection()
         {
-            foreach (var tilePos in selectedTiles)
+            foreach (var tilePos in SelectedTiles)
             {
                 if (tilemap.HasTile(tilePos))
                 {
