@@ -139,3 +139,4 @@ MonoBehaviour:
   RockThreshold: 13
   MooreNeighborhoodSize: 2
   DungeonSprite: {fileID: 4298914231429189274}
+  _gridSize: {x: 1, y: 1}

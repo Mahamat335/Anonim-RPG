@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 6991011275675352930}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
-  m_LocalScale: {x: 2.4, y: 3.6, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5779994464660578282}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: -1634166565
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 1450799907623900623, guid: fa0695663fdcf944396c858e7026e65c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tileSelector:
     tilemap: {fileID: 0}
+    SelectedTiles: []
     selectionTint: {r: 1, g: 0, b: 0, a: 0.5019608}
   _weaponData: {fileID: 11400000, guid: e16aa67170b2fa048806022badb4d11d, type: 2}
 --- !u!4 &5779994464660578282 stripped
