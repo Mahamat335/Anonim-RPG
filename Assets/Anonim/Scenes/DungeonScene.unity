@@ -221,6 +221,23 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &753343954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5279305345867709550, guid: c85e4fb426cc29045a9b9d650308130d, type: 3}
+  m_PrefabInstance: {fileID: 5573967999541877516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &753343958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753343954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8a05de0ac134f4f9d01bef6b9da077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &760086042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,10 +1252,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 6184283858531355653, guid: c85e4fb426cc29045a9b9d650308130d, type: 3}
+      propertyPath: TargetOffset.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5279305345867709550, guid: c85e4fb426cc29045a9b9d650308130d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 753343958}
   m_SourcePrefab: {fileID: 100100000, guid: c85e4fb426cc29045a9b9d650308130d, type: 3}
 --- !u!1001 &5734130953406874739
 PrefabInstance:
@@ -1248,6 +1272,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1608335957396778598, guid: 8f0bbdca98663184aa8af3ab75ab5497, type: 3}
+      propertyPath: Width
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608335957396778598, guid: 8f0bbdca98663184aa8af3ab75ab5497, type: 3}
+      propertyPath: Height
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608335957396778598, guid: 8f0bbdca98663184aa8af3ab75ab5497, type: 3}
+      propertyPath: _gridSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608335957396778598, guid: 8f0bbdca98663184aa8af3ab75ab5497, type: 3}
+      propertyPath: _gridSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2112922025443185830, guid: 8f0bbdca98663184aa8af3ab75ab5497, type: 3}
       propertyPath: m_LocalPosition.x
       value: 774.4229
