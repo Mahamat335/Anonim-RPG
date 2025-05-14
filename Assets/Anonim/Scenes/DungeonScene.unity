@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 760086043}
   - component: {fileID: 760086046}
   - component: {fileID: 760086047}
+  - component: {fileID: 760086048}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -301,7 +302,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4
+  orthographic size: 22.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -408,6 +409,30 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &760086048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760086042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_AssetsPPU: 8
+  m_RefResolutionX: 640
+  m_RefResolutionY: 320
+  m_CropFrame: 0
+  m_GridSnapping: 0
+  m_FilterMode: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!4 &955266463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5779994464660578282, guid: 5a9e39e0eb1746347b367fbf6c84bb6e, type: 3}
@@ -562,6 +587,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3734084827123621485, guid: c1ed04c32f31df54f829073e5354d0d7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3734084827123621485, guid: c1ed04c32f31df54f829073e5354d0d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1130,6 +1159,14 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[12].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 9114519143353357553, guid: c1ed04c32f31df54f829073e5354d0d7, type: 3}
+      propertyPath: m_CellSize.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114519143353357553, guid: c1ed04c32f31df54f829073e5354d0d7, type: 3}
+      propertyPath: m_CellSize.y
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1242,7 +1279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5239631907069680769, guid: c85e4fb426cc29045a9b9d650308130d, type: 3}
       propertyPath: Lens.OrthographicSize
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5239631907069680769, guid: c85e4fb426cc29045a9b9d650308130d, type: 3}
       propertyPath: Target.TrackingTarget
@@ -1282,11 +1319,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1608335957396778598, guid: 8f0bbdca98663184aa8af3ab75ab5497, type: 3}
       propertyPath: _gridSize.x
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1608335957396778598, guid: 8f0bbdca98663184aa8af3ab75ab5497, type: 3}
       propertyPath: _gridSize.y
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2112922025443185830, guid: 8f0bbdca98663184aa8af3ab75ab5497, type: 3}
       propertyPath: m_LocalPosition.x
