@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Anonim.Systems.DungeonSystem;
 using UnityEngine;
 
 namespace Anonim.CombatSystem.TileSelection.TileSelectionMethods
@@ -10,7 +11,10 @@ namespace Anonim.CombatSystem.TileSelection.TileSelectionMethods
         {
             List<Vector3Int> selectedTiles = new List<Vector3Int>();
 
-            selectedTiles.Add(centerTilePosition);
+            if (DungeonGenerator.Instance.IsFloor(centerTilePosition.x, centerTilePosition.y))
+            {
+                selectedTiles.Add(centerTilePosition);
+            }
 
             for (int i = -(int)selectionRadius; i <= selectionRadius; i++)
             {
@@ -18,8 +22,16 @@ namespace Anonim.CombatSystem.TileSelection.TileSelectionMethods
                 {
                     continue;
                 }
-                selectedTiles.Add(new Vector3Int(centerTilePosition.x + i, centerTilePosition.y));
-                selectedTiles.Add(new Vector3Int(centerTilePosition.x, centerTilePosition.y + i));
+
+                if (DungeonGenerator.Instance.IsFloor(centerTilePosition.x + i, centerTilePosition.y))
+                {
+                    selectedTiles.Add(new Vector3Int(centerTilePosition.x + i, centerTilePosition.y));
+                }
+
+                if (DungeonGenerator.Instance.IsFloor(centerTilePosition.x, centerTilePosition.y + i))
+                {
+                    selectedTiles.Add(new Vector3Int(centerTilePosition.x, centerTilePosition.y + i));
+                }
             }
 
             return selectedTiles;

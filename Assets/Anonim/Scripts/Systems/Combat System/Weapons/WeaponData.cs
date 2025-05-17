@@ -10,6 +10,7 @@ namespace Anonim.Systems.CombatSystem.Weapons
         public string WeaponDescription;
         public uint AttackRange = 1;
         public uint AttackRadius = 1;
+        public bool IsProjectile = false;
         public TileSelectionMethod TileSelectionMethod;
     }
 }

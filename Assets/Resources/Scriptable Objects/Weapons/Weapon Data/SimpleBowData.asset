@@ -16,4 +16,5 @@ MonoBehaviour:
   WeaponDescription: Fires Arrow
   AttackRange: 4
   AttackRadius: 1
+  IsProjectile: 1
   TileSelectionMethod: {fileID: 11400000, guid: bd7a362622f45de4eba0657f4ac3fc94, type: 2}

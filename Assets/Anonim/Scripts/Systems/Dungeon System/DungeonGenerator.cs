@@ -124,6 +124,11 @@ namespace Anonim.Systems.DungeonSystem
 
         public bool IsWall(int x, int y)
         {
+            if (IsWithinBounds(x, y) == false)
+            {
+                return false;
+            }
+
             if (_grid[x, y] == 0)
             {
                 return false;
@@ -142,6 +147,24 @@ namespace Anonim.Systems.DungeonSystem
                 }
             }
             return false;
+        }
+
+        public bool IsFloor(int x, int y)
+        {
+            if (IsWithinBounds(x, y))
+            {
+                return _grid[x, y] == 0;
+            }
+            return false;
+        }
+
+        public bool IsWithinBounds(int x, int y)
+        {
+            if (x < 0 || x >= Width || y < 0 || y >= Height)
+            {
+                return false;
+            }
+            return true;
         }
 
         public Vector2 GetGridToWorldPosition(Vector2Int gridPosition)
