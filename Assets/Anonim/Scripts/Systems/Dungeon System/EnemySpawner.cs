@@ -1,12 +1,21 @@
 using System.Collections.Generic;
+using Anonim.Systems.StatSystem;
 using UnityEngine;
 
 namespace Anonim.Systems.DungeonSystem
 {
-    public class EnemySpawner : MonoBehaviour
+    public class EnemySpawner : Singleton<EnemySpawner>
     {
-        [SerializeField] private GameObject _enemyPrefab;
-        [SerializeField] private int _enemyCount = 10;
+        [SerializeField] private SerializableDictionary<GameObject, int> _enemiesSerializableDictionary;
+        private Dictionary<GameObject, int> _enemiesDictionary;
+        private Dictionary<Vector2Int, GameObject> _enemies = new();
+        private Transform _enemyParentTransform;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _enemiesDictionary = _enemiesSerializableDictionary.ToDictionary();
+        }
 
         private void Start()
         {
@@ -15,35 +24,42 @@ namespace Anonim.Systems.DungeonSystem
 
         private void SpawnEnemies()
         {
-            DungeonGenerator dungeon = DungeonGenerator.Instance;
-            List<Vector2Int> floorPositions = new List<Vector2Int>();
+            _enemyParentTransform = Instantiate(new GameObject("Enemies").transform);
 
-            // Tüm floor tile'ları bul
-            for (int x = 0; x < dungeon.Width; x++)
+            foreach (KeyValuePair<GameObject, int> kvp in _enemiesDictionary)
             {
-                for (int y = 0; y < dungeon.Height; y++)
+                for (int i = 0; i < kvp.Value; i++)
                 {
-                    if (dungeon.IsFloor(x, y))
-                    {
-                        floorPositions.Add(new Vector2Int(x, y));
-                    }
+                    Vector2Int spawnGridPos = GetRandomPosition();
+                    Vector2 worldPos = DungeonGenerator.Instance.GetGridToWorldPosition(spawnGridPos);
+                    _enemies.Add(spawnGridPos, Instantiate(kvp.Key, worldPos, Quaternion.identity, _enemyParentTransform));
                 }
             }
+        }
 
-            // Eğer floor tile yoksa çık
-            if (floorPositions.Count == 0)
-            {
-                Debug.LogWarning("No floor tiles found to spawn enemies.");
-                return;
-            }
+        private Vector2Int GetRandomPosition()
+        {
+            int width = DungeonGenerator.Instance.Width;
+            int height = DungeonGenerator.Instance.Height;
+            Vector2Int position;
 
-            // Enemyleri rastgele floor tile'lara yerleştir
-            for (int i = 0; i < _enemyCount; i++)
+            do
             {
-                Vector2Int spawnGridPos = floorPositions[Random.Range(0, floorPositions.Count)];
-                Vector2 worldPos = dungeon.GetGridToWorldPosition(spawnGridPos);
-                Instantiate(_enemyPrefab, worldPos, Quaternion.identity);
-            }
+                position = new Vector2Int(Random.Range(0, width), Random.Range(0, height));
+            } while (_enemies.ContainsKey(position) || DungeonGenerator.Instance.IsFloor(position.x, position.y) == false);
+
+            return position;
+        }
+
+        public GameObject GetEnemyInTile(Vector2Int targetPosition)
+        {
+            return _enemies.ContainsKey(targetPosition) ? _enemies[targetPosition] : null;
+        }
+
+        public GameObject GetEnemyInTile(int x, int y)
+        {
+            Vector2Int targetPosition = new(x, y);
+            return _enemies.ContainsKey(targetPosition) ? _enemies[targetPosition] : null;
         }
     }
 }

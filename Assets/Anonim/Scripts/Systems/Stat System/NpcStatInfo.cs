@@ -10,7 +10,7 @@ namespace Anonim.Systems.StatSystem
 
         private void Start()
         {
-            _infoText.SetText(GetStatInfo());
+            _infoText?.SetText(GetStatInfo());
         }
         private string GetStatInfo()
         {

@@ -733,6 +733,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5779994464660578282, guid: 5a9e39e0eb1746347b367fbf6c84bb6e, type: 3}
   m_PrefabInstance: {fileID: 7781203412724838813}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1504408515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5201196697331344713, guid: 8f0bbdca98663184aa8af3ab75ab5497, type: 3}
+  m_PrefabInstance: {fileID: 5734130953406874739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504408518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504408515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cf358fca1fdbc44cad39b3d1f1478ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemiesSerializableDictionary:
+    serializableDictionaryItems:
+    - key: {fileID: 7538643892748952190, guid: efe57a2688b6d41449820833d7fc4294, type: 3}
+      value: 50
+    - key: {fileID: 3360869267052353641, guid: 17f1cf6a70ef26842aedcf9cebaf04b6, type: 3}
+      value: 50
+    - key: {fileID: 4427344400100840224, guid: f126514401fb3d8418d7590f77535d26, type: 3}
+      value: 50
 --- !u!1 &1844456640
 GameObject:
   m_ObjectHideFlags: 0
@@ -4651,6 +4676,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 6184283858531355653, guid: c85e4fb426cc29045a9b9d650308130d, type: 3}
+      propertyPath: Damping.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184283858531355653, guid: c85e4fb426cc29045a9b9d650308130d, type: 3}
+      propertyPath: Damping.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184283858531355653, guid: c85e4fb426cc29045a9b9d650308130d, type: 3}
+      propertyPath: Damping.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6184283858531355653, guid: c85e4fb426cc29045a9b9d650308130d, type: 3}
+      propertyPath: Lookahead.Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4711,7 +4752,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5201196697331344713, guid: 8f0bbdca98663184aa8af3ab75ab5497, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1504408518}
   m_SourcePrefab: {fileID: 100100000, guid: 8f0bbdca98663184aa8af3ab75ab5497, type: 3}
 --- !u!1001 &5858426139266049699
 PrefabInstance:
@@ -4778,6 +4822,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 444386082914232955, guid: 5a9e39e0eb1746347b367fbf6c84bb6e, type: 3}
+      propertyPath: _rendererTransform
+      value: 
+      objectReference: {fileID: 7781203412724838814}
     - target: {fileID: 1039880140382721872, guid: 5a9e39e0eb1746347b367fbf6c84bb6e, type: 3}
       propertyPath: _tileSelector.tilemap
       value: 
@@ -4850,11 +4898,20 @@ PrefabInstance:
       propertyPath: _infoText
       value: 
       objectReference: {fileID: 1844456642}
+    - target: {fileID: 6991011275675352930, guid: 5a9e39e0eb1746347b367fbf6c84bb6e, type: 3}
+      propertyPath: m_Name
+      value: Sprite
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9e39e0eb1746347b367fbf6c84bb6e, type: 3}
+--- !u!4 &7781203412724838814 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6876533356948292273, guid: 5a9e39e0eb1746347b367fbf6c84bb6e, type: 3}
+  m_PrefabInstance: {fileID: 7781203412724838813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

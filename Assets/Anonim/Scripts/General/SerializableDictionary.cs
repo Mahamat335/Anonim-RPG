@@ -13,9 +13,9 @@ namespace Anonim
         public Dictionary<TKey, TValue> ToDictionary()
         {
             Dictionary<TKey, TValue> resultDictionary = new Dictionary<TKey, TValue>();
-            foreach (KeyValuePair<TKey, TValue> keyValuePair in resultDictionary)
+            foreach (SerializableDictionaryItem<TKey, TValue> keyValuePair in serializableDictionaryItems)
             {
-                resultDictionary.Add(keyValuePair.Key, keyValuePair.Value);
+                resultDictionary.Add(keyValuePair.key, keyValuePair.value);
             }
             return resultDictionary;
         }

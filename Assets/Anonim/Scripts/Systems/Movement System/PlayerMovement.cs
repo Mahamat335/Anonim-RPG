@@ -16,6 +16,7 @@ namespace Anonim.Systems.MovementSystem
         private bool _canMove = true;
         private bool _isMoving = false;
         private Vector2 _movementInput;
+        [SerializeField] private Transform _rendererTransform;
 
         private void Awake()
         {
@@ -159,6 +160,11 @@ namespace Anonim.Systems.MovementSystem
 
         private void PlayMovementAnimation(Vector2 direction)
         {
+            if (direction.x * _rendererTransform.localScale.x < 0)
+            {
+                _rendererTransform.localScale = new Vector3(-_rendererTransform.localScale.x, _rendererTransform.localScale.y, _rendererTransform.localScale.z);
+            }
+
             // Burada kendi Animator parametrelerini kullanacaksın
             // Örnek: Animator'da "MoveX" ve "MoveY" float parametrelerin olsun.
 

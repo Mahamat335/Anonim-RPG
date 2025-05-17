@@ -11,8 +11,11 @@ namespace Anonim.Systems.CombatSystem.TileSelection
     {
         [SerializeField] private Tilemap _tilemap;
         public List<Vector3Int> SelectedTiles = new List<Vector3Int>();
-        [SerializeField] private Color _selectionTint;
+        private Color _selectionTint { get { return _isUsingPrimaryTint ? _primarySelectionTint : _secondarySelectionTint; } }
+        [SerializeField] private Color _primarySelectionTint;
+        [SerializeField] private Color _secondarySelectionTint;
         [SerializeField] private Tile _selectionTile;
+        private bool _isUsingPrimaryTint = true;
 
         public void UpdateSelectedTiles(Vector3Int centerPosition, TileSelectionMethod tileSelectionMethod, uint selectionRadius = 1)
         {
@@ -51,6 +54,11 @@ namespace Anonim.Systems.CombatSystem.TileSelection
             {
                 _tilemap.SetTile(tilePos, null);
             }
+        }
+
+        public void ToggleActiveSelectionTint()
+        {
+            _isUsingPrimaryTint = !_isUsingPrimaryTint;
         }
     }
 }

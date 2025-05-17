@@ -125,6 +125,7 @@ namespace Anonim.Systems.CombatSystem.TileSelection
         private void OnAttackTimerCompleted()
         {
             _canAttack = true;
+            _tileSelector.ToggleActiveSelectionTint();
         }
 
         private void Attack()
@@ -134,11 +135,17 @@ namespace Anonim.Systems.CombatSystem.TileSelection
                 return;
             }
             _canAttack = false;
+            _tileSelector.ToggleActiveSelectionTint();
             _attackTimer.Start();
             // Attack logic here
             foreach (Vector3Int position in _tileSelector.SelectedTiles)
             {
-                Debug.Log(position);
+                GameObject enemyObject = EnemySpawner.Instance.GetEnemyInTile(position.x, position.y);
+                if (enemyObject == null)
+                {
+                    continue;
+                }
+                Destroy(enemyObject);
             }
         }
 
