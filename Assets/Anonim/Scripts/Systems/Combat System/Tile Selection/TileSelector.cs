@@ -2,15 +2,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Anonim.CombatSystem.TileSelection.TileSelectionMethods;
+using Anonim.Systems.DungeonSystem;
 
 namespace Anonim.Systems.CombatSystem.TileSelection
 {
     [System.Serializable]
     public class TileSelector
     {
-        [SerializeField] private Tilemap tilemap;
+        [SerializeField] private Tilemap _tilemap;
         public List<Vector3Int> SelectedTiles = new List<Vector3Int>();
-        [SerializeField] private Color selectionTint;
+        [SerializeField] private Color _selectionTint;
+        [SerializeField] private Tile _selectionTile;
 
         public void UpdateSelectedTiles(Vector3Int centerPosition, TileSelectionMethod tileSelectionMethod, uint selectionRadius = 1)
         {
@@ -23,15 +25,23 @@ namespace Anonim.Systems.CombatSystem.TileSelection
         {
             foreach (var tilePos in SelectedTiles)
             {
-                if (!tilemap.HasTile(tilePos))
+                if (DungeonGenerator.Instance.IsFloor(tilePos.x, tilePos.y) == false)
                 {
                     continue;
                 }
 
-                // Blend the color with the selection tint
-                Color blendedColor = Color.Lerp(Color.white, selectionTint, selectionTint.a);
-                blendedColor.a = 1.0f;
-                tilemap.SetColor(tilePos, blendedColor);
+
+                if (_tilemap.HasTile(tilePos))
+                {
+                    Color currentColor = _tilemap.GetColor(tilePos);
+                    Color blendedColor = Color.Lerp(currentColor, _selectionTint, 0.5f);
+                    _tilemap.SetColor(tilePos, blendedColor);
+                }
+                else
+                {
+                    _tilemap.SetTile(tilePos, _selectionTile);
+                    _tilemap.SetColor(tilePos, _selectionTint);
+                }
             }
         }
 
@@ -39,10 +49,7 @@ namespace Anonim.Systems.CombatSystem.TileSelection
         {
             foreach (var tilePos in SelectedTiles)
             {
-                if (tilemap.HasTile(tilePos))
-                {
-                    tilemap.SetColor(tilePos, Color.white);
-                }
+                _tilemap.SetTile(tilePos, null);
             }
         }
     }

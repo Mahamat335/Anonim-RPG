@@ -1,0 +1,786 @@
+fileFormatVersion: 2
+guid: ca665fa265ae7e448afa4ce9a7356d52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1502184078014746867
+    second: Wall Tile Atlas_0
+  - first:
+      213: 5466635632144412295
+    second: Wall Tile Atlas_1
+  - first:
+      213: 2899551073946756302
+    second: Wall Tile Atlas_2
+  - first:
+      213: 7395878309040565682
+    second: Wall Tile Atlas_3
+  - first:
+      213: 4745685110630619288
+    second: Wall Tile Atlas_4
+  - first:
+      213: -8008235404960090964
+    second: Wall Tile Atlas_5
+  - first:
+      213: -4050891552358113351
+    second: Wall Tile Atlas_6
+  - first:
+      213: -8620661396893519967
+    second: Wall Tile Atlas_7
+  - first:
+      213: 7570199190943933626
+    second: Wall Tile Atlas_8
+  - first:
+      213: 7913274247399433544
+    second: Wall Tile Atlas_9
+  - first:
+      213: -6571727189055964532
+    second: Wall Tile Atlas_10
+  - first:
+      213: 6258808478745658224
+    second: Wall Tile Atlas_11
+  - first:
+      213: 7536022765339221947
+    second: Wall Tile Atlas_12
+  - first:
+      213: -1905448050030076658
+    second: Wall Tile Atlas_13
+  - first:
+      213: -2162568011968942107
+    second: Wall Tile Atlas_14
+  - first:
+      213: 2304856488884237604
+    second: Wall Tile Atlas_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 8
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wall Tile Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 151
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f01155c574d8d410800000000000000
+      internalID: 1502184078014746867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 151
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78ee57ad4246ddb40800000000000000
+      internalID: 5466635632144412295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 151
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec4e2bad6564d3820800000000000000
+      internalID: 2899551073946756302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 151
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bd2164132073a660800000000000000
+      internalID: 7395878309040565682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 126
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8989ff2e67f0cd140800000000000000
+      internalID: 4745685110630619288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 126
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca4b5a124580dd090800000000000000
+      internalID: -8008235404960090964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 126
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf501e789758c7c0800000000000000
+      internalID: -4050891552358113351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 126
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af2d3d32224d5880800000000000000
+      internalID: -8620661396893519967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 101
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab4a9273e00ce0960800000000000000
+      internalID: 7570199190943933626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 101
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8456d7e600991dd60800000000000000
+      internalID: 7913274247399433544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 101
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8afa87a0f88cc4a0800000000000000
+      internalID: -6571727189055964532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 101
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07386dc9621cbd650800000000000000
+      internalID: 6258808478745658224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 76
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf1d4b07c4559860800000000000000
+      internalID: 7536022765339221947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 76
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d1fff081d7e85e0800000000000000
+      internalID: -1905448050030076658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 76
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5efe7f3d9d30df1e0800000000000000
+      internalID: -2162568011968942107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 76
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425f236d3ce7cff10800000000000000
+      internalID: 2304856488884237604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 51
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8149dea0ff04a344bbb99eb184a9e0e4
+      internalID: -835091992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 51
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 307937f86a0a4a04ea26638e5ebfaab9
+      internalID: 2005098402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 51
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85fe80eea0fb4574d8ab6f66196f9a5c
+      internalID: -578399606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_19
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 51
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17cf7878f431c014c944eba23ba50f7e
+      internalID: 1307134957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 26
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25ed30ccdd2961d40bb09ffd16ee27a9
+      internalID: -266772322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_21
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 26
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9292de8e98cdfa043ada821e3b839674
+      internalID: 91054000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_22
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 26
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644c89799296c4247ab080f865e689a5
+      internalID: -1083099910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_23
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 26
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1f57f0715f667488c3746e690b696e
+      internalID: 661997334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c01a3d6b7228848948bce38ae94988
+      internalID: 1588647324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_25
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964fcaeeeb9196d44956dc6f0bbd1e70
+      internalID: -1321751537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wall Tile Atlas_26
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410b832de6587194ba2c2a300fe07f35
+      internalID: 2144683333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c59700cb3066eac4ca43819e38f19305
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Wall Tile Atlas_0: 1502184078014746867
+      Wall Tile Atlas_1: 5466635632144412295
+      Wall Tile Atlas_10: -6571727189055964532
+      Wall Tile Atlas_11: 6258808478745658224
+      Wall Tile Atlas_12: 7536022765339221947
+      Wall Tile Atlas_13: -1905448050030076658
+      Wall Tile Atlas_14: -2162568011968942107
+      Wall Tile Atlas_15: 2304856488884237604
+      Wall Tile Atlas_16: -835091992
+      Wall Tile Atlas_17: 2005098402
+      Wall Tile Atlas_18: -578399606
+      Wall Tile Atlas_19: 1307134957
+      Wall Tile Atlas_2: 2899551073946756302
+      Wall Tile Atlas_20: -266772322
+      Wall Tile Atlas_21: 91054000
+      Wall Tile Atlas_22: -1083099910
+      Wall Tile Atlas_23: 661997334
+      Wall Tile Atlas_24: 1588647324
+      Wall Tile Atlas_25: -1321751537
+      Wall Tile Atlas_26: 2144683333
+      Wall Tile Atlas_3: 7395878309040565682
+      Wall Tile Atlas_4: 4745685110630619288
+      Wall Tile Atlas_5: -8008235404960090964
+      Wall Tile Atlas_6: -4050891552358113351
+      Wall Tile Atlas_7: -8620661396893519967
+      Wall Tile Atlas_8: 7570199190943933626
+      Wall Tile Atlas_9: 7913274247399433544
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
