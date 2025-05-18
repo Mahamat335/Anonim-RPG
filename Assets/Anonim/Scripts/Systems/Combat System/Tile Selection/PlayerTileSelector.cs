@@ -49,7 +49,7 @@ namespace Anonim.Systems.CombatSystem.TileSelection
             }
             else
             {
-                Debug.LogError("PlayerMovementSpeed is not set or is zero."); // Handle this case as needed, maybe disable movement
+                Debug.LogError("PlayerAttackSpeed is not set or is zero."); // Handle this case as needed, maybe disable movement
                 return;
             }
 

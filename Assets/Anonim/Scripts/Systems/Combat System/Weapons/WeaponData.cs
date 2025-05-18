@@ -1,5 +1,5 @@
 using UnityEngine;
-using Anonim.CombatSystem.TileSelection.TileSelectionMethods;
+using Anonim.Systems.CombatSystem.TileSelection.TileSelectionMethods;
 
 namespace Anonim.Systems.CombatSystem.Weapons
 {

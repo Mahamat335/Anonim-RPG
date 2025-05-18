@@ -32,6 +32,7 @@ namespace Anonim.Systems.MovementSystem
         private void OnDisable()
         {
             EventManager.Instance.PlayerMovementInput.RemoveListener(OnPlayerMovementInput);
+            EventManager.Instance.StatModifierAdded.RemoveListener(OnStatModifierChanged);
             _movementTimer.OnCompleted -= OnMovementTimerCompleted; // If you want to disable player somehow, you might wanna check this line
         }
 
@@ -131,10 +132,17 @@ namespace Anonim.Systems.MovementSystem
             }
 
             // Check if target tile is walkable (white tiles only)
-            if (DungeonGenerator.Instance.Grid[targetGridPos.x, targetGridPos.y] != 0)
+            if (DungeonGenerator.Instance.IsFloor(targetGridPos.x, targetGridPos.y) == false)
             {
                 yield break;
             }
+
+            if (EnemySpawner.Instance.GetEnemyInTile(targetGridPos) != null)
+            {
+                yield break;
+            }
+
+            GlobalPlayer.Instance.PlayerPosition = targetGridPos;
 
             // Play movement animation
             PlayMovementAnimation(movementInput);

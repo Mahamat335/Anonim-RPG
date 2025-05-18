@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Anonim.CombatSystem.TileSelection.TileSelectionMethods;
+using Anonim.Systems.CombatSystem.TileSelection.TileSelectionMethods;
 using Anonim.Systems.DungeonSystem;
 
 namespace Anonim.Systems.CombatSystem.TileSelection

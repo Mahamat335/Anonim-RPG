@@ -61,5 +61,34 @@ namespace Anonim.Systems.DungeonSystem
             Vector2Int targetPosition = new(x, y);
             return _enemies.ContainsKey(targetPosition) ? _enemies[targetPosition] : null;
         }
+
+        public void MoveEnemy(GameObject gameObject, Vector2Int newPosition)
+        {
+            Vector2Int? currentKey = null;
+
+            foreach (var kvp in _enemies)
+            {
+                if (kvp.Value == gameObject)
+                {
+                    currentKey = kvp.Key;
+                    break;
+                }
+            }
+
+            if (currentKey.HasValue)
+            {
+                _enemies.Remove(currentKey.Value);
+                _enemies[newPosition] = gameObject;
+            }
+            else
+            {
+                Debug.LogWarning("Enemy not found in dictionary.");
+            }
+        }
+
+        public void RemoveEnemy(Vector2Int position)
+        {
+            _enemies.Remove(position);
+        }
     }
 }

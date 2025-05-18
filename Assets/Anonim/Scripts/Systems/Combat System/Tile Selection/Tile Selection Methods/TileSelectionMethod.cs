@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-namespace Anonim.CombatSystem.TileSelection.TileSelectionMethods
+
+namespace Anonim.Systems.CombatSystem.TileSelection.TileSelectionMethods
 {
     public abstract class TileSelectionMethod : ScriptableObject
     {

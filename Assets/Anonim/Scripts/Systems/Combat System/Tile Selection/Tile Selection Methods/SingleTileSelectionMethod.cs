@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Anonim.Systems.DungeonSystem;
 using UnityEngine;
 
-namespace Anonim.CombatSystem.TileSelection.TileSelectionMethods
+namespace Anonim.Systems.CombatSystem.TileSelection.TileSelectionMethods
 {
     [CreateAssetMenu(fileName = "SingleTileSelectionMethod", menuName = "Scriptable Objects/Tile Selection Methods/Single Tile Selection Method")]
     public class SingleTileSelectionMethod : TileSelectionMethod
