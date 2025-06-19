@@ -7,3 +7,5 @@ This project was developed within a limited timeframe as part of the GAM-503E co
 - ⚔️ **Tile Selection Mechanics** based on equipped weapons
 
 Feel free to check out the code and experiment with the systems!
+
+https://mahamat.itch.io/anonim-rpg
