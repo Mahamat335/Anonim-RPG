@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 700035894613698692, guid: 2c80ad1457e1a2f48a0695c3d7f990c4, type: 3}
       propertyPath: _stats.Array.data[6].BaseValue
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2320458884076795866, guid: 2c80ad1457e1a2f48a0695c3d7f990c4, type: 3}
       propertyPath: m_Size.x
@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lenny
       objectReference: {fileID: 0}
+    - target: {fileID: 7594390452045482578, guid: 2c80ad1457e1a2f48a0695c3d7f990c4, type: 3}
+      propertyPath: _weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8eb85eee84945234c945a0f0698d57a5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

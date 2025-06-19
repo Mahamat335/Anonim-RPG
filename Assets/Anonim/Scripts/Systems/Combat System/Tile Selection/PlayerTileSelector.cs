@@ -43,6 +43,7 @@ namespace Anonim.Systems.CombatSystem.TileSelection
 
         private void Start()
         {
+            _tileSelector.SetTilemap(SelectionTileMap.Instance.PlayerSelectionTilemap);
             if (_playerAttackSpeed > 0)
             {
                 _attackTimer = new AnonimTimer(1.0f / _playerAttackSpeed);
@@ -145,7 +146,7 @@ namespace Anonim.Systems.CombatSystem.TileSelection
                 {
                     continue;
                 }
-                Destroy(enemyObject);
+                enemyObject.GetComponent<DamageableComponent>()?.TakeDamage(1.0f);
             }
         }
 
@@ -165,6 +166,13 @@ namespace Anonim.Systems.CombatSystem.TileSelection
             Vector3Int newCenter = new Vector3Int(Mathf.RoundToInt(_lastPlayerGridPosition.x + direction.x), Mathf.RoundToInt(_lastPlayerGridPosition.y + direction.y));
 
             return newCenter;
+        }
+
+        public void SetWeaponData(WeaponData weaponData)
+        {
+            _weaponData = weaponData;
+            Vector3Int selectionCenter = UpdateSelectionCenter();
+            _tileSelector.UpdateSelectedTiles(selectionCenter, _weaponData.TileSelectionMethod, _weaponData.AttackRadius);
         }
     }
 }

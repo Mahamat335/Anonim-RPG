@@ -1,4 +1,5 @@
 using Anonim;
+using Anonim.Systems.CombatSystem;
 using Anonim.Systems.DungeonSystem;
 using Anonim.Systems.StatSystem;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace Anonim
     {
         public StatComponent PlayerStatComponent;
         public Vector2Int PlayerPosition;
+        public DamageableComponent PlayerDamageableComponent;
         private void Start()
         {
             PlayerPosition = DungeonGenerator.Instance.GetWorldToGridPosition(transform.position);

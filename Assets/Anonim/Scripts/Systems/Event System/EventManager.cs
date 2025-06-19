@@ -16,6 +16,7 @@ namespace Anonim.Systems.EventSystem
         public InputEvent PlayerMovementInput;
         public InputEvent PlayerMousePositionInput;
         public InputEvent PlayerMouseLeftClickInput;
+        public InputEvent EquipmentInput;
         #endregion
 
         #region Stat System Events

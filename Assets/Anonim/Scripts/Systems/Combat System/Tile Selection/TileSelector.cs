@@ -9,7 +9,7 @@ namespace Anonim.Systems.CombatSystem.TileSelection
     [System.Serializable]
     public class TileSelector
     {
-        [SerializeField] private Tilemap _tilemap;
+        private Tilemap _tilemap;
         public List<Vector3Int> SelectedTiles = new List<Vector3Int>();
         private Color _selectionTint { get { return _isUsingPrimaryTint ? _primarySelectionTint : _secondarySelectionTint; } }
         [SerializeField] private Color _primarySelectionTint;
@@ -17,10 +17,35 @@ namespace Anonim.Systems.CombatSystem.TileSelection
         [SerializeField] private Tile _selectionTile;
         private bool _isUsingPrimaryTint = true;
 
+        public void SetTilemap(Tilemap tilemap)
+        {
+            _tilemap = tilemap;
+        }
+
         public void UpdateSelectedTiles(Vector3Int centerPosition, TileSelectionMethod tileSelectionMethod, uint selectionRadius = 1)
         {
             ClearSelection();
             SelectedTiles = tileSelectionMethod.GetSelectedTiles(centerPosition, selectionRadius);
+            ApplySelection();
+        }
+
+        public List<Vector3Int> AddSelectedTiles(Vector3Int centerPosition, TileSelectionMethod tileSelectionMethod, uint selectionRadius = 1)
+        {
+            ClearSelection();
+            List<Vector3Int> currentSelectedTiles = tileSelectionMethod.GetSelectedTiles(centerPosition, selectionRadius);
+            SelectedTiles.AddRange(currentSelectedTiles);
+            ApplySelection();
+            return currentSelectedTiles;
+        }
+
+        public void SetSelectedTiles(List<List<Vector3Int>> newSelectedTiles)
+        {
+            ClearSelection();
+            SelectedTiles.Clear();
+            foreach (List<Vector3Int> currentList in newSelectedTiles)
+            {
+                SelectedTiles.AddRange(currentList);
+            }
             ApplySelection();
         }
 
@@ -48,7 +73,7 @@ namespace Anonim.Systems.CombatSystem.TileSelection
             }
         }
 
-        private void ClearSelection()
+        public void ClearSelection()
         {
             foreach (var tilePos in SelectedTiles)
             {

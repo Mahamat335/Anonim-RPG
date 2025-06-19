@@ -28,7 +28,7 @@ namespace Anonim
                             GameObject go = new GameObject(typeof(T).ToString());
                             _instance = go.AddComponent<T>();
 
-                            DontDestroyOnLoad(_instance.gameObject);
+                            //DontDestroyOnLoad(_instance.gameObject);
                         }
                     }
 

@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Settings/Scenes/2D URP Scene Template.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Anonim/Scenes/Main Menu.unity
+    guid: aac3c67ec4e9a3a41975d849f9742716
+  - enabled: 1
+    path: Assets/Anonim/Scenes/DungeonScene.unity
+    guid: 38aaf43a077ff6e42be83ec71a1d26b3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 32c402bfe56bd7b41ad19bc90e465b81, type: 3}
   m_UseUCBPForAssetBundles: 0

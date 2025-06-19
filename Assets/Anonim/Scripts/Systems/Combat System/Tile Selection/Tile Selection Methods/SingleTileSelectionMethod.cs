@@ -13,7 +13,7 @@ namespace Anonim.Systems.CombatSystem.TileSelection.TileSelectionMethods
             {
                 return new List<Vector3Int> { centerTilePosition };
             }
-            return null;
+            return new List<Vector3Int>();
         }
     }
 }
